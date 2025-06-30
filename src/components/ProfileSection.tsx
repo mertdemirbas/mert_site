@@ -20,7 +20,7 @@ const ProfileSection = ({ onNavigate }: ProfileSectionProps) => {
         <div className="mb-20">
           <div className="w-48 h-48 mx-auto mb-12 relative">
             <img
-              src="/lovable-uploads/1f941ea6-6733-46a7-9da4-2c00604be298.png"
+              src="https://pub-8a05c1058c224a889b27b794b156e764.r2.dev/profile.jpg"
               alt="Mert Demirbas"
               className="w-full h-full rounded-full object-cover border-3 border-slate-400/30 shadow-2xl"
             />
