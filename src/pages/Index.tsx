@@ -33,20 +33,25 @@ const Index = () => {
       {/* Professional background */}
       <div className="fixed inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"></div>
       
-      {/* Back arrow - show on other pages */}
-      {activeTab !== 'home' && (
-        <button
-          onClick={handleBackToHome}
-          className="fixed top-8 left-8 z-50 flex items-center gap-2 bg-slate-800/90 backdrop-blur-sm rounded-lg px-6 py-3 border border-slate-600/50 text-slate-300 hover:text-white hover:bg-slate-700/90 transition-all duration-300 shadow-lg"
-        >
-          <ArrowLeft size={20} />
-          <span className="font-medium">Back</span>
-        </button>
-      )}
-      
       {/* Content */}
       <div className="relative z-10">
-        {renderContent()}
+        {/* Back arrow - show on other pages with proper spacing */}
+        {activeTab !== 'home' && (
+          <div className="relative z-20 pt-6 pb-4 px-6">
+            <button
+              onClick={handleBackToHome}
+              className="flex items-center gap-2 bg-slate-800/90 backdrop-blur-sm rounded-lg px-4 py-2 md:px-6 md:py-3 border border-slate-600/50 text-slate-300 hover:text-white hover:bg-slate-700/90 transition-all duration-300 shadow-lg"
+            >
+              <ArrowLeft size={18} className="md:w-5 md:h-5" />
+              <span className="font-medium text-sm md:text-base">Back</span>
+            </button>
+          </div>
+        )}
+        
+        {/* Main content with conditional padding */}
+        <div className={activeTab !== 'home' ? 'pt-0' : ''}>
+          {renderContent()}
+        </div>
       </div>
     </div>
   );
